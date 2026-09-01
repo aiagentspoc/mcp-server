@@ -12,7 +12,8 @@ gantt
     dateFormat  YYYY-MM-DD
     section Phase 1: Environment & Models
     Project Setup & Dependencies (pyproject.toml)       :done, p1_1, 2026-08-27, 1d
-    Pydantic v2 Schemas (models.py)                     :active, p1_2, 2026-08-27, 1d
+    Pydantic v2 Schemas (models.py)                     :done, p1_2, 2026-08-27, 1d
+    Schema & Serialization Tests (test_models.py)       :done, p1_3, 2026-08-27, 1d
     section Phase 2: Fixture Datasets
     Regulatory Corpus (regulatory_docs.json)            :p2_1, after p1_2, 1d
     Citation Verification Registry (citations.json)     :p2_2, after p2_1, 1d
@@ -38,15 +39,15 @@ gantt
 * **Goal**: Establish a reproducible Python 3.10+ runtime and define two-tier Pydantic v2 schemas.
 
 ### Tasks
-- [ ] **1.1. Package Management Configuration (`pyproject.toml`)**
+- [x] **1.1. Package Management Configuration (`pyproject.toml`)**
   - Configure `uv` / `pip` environment with `fastmcp>=0.1.0`, `pydantic>=2.0.0`, `pytest`, `pytest-asyncio`.
   - Set entrypoint for MCP stdio execution (`python server.py`).
-- [ ] **1.2. Two-Tier Data Schemas (`models.py`)**
+- [x] **1.2. Two-Tier Data Schemas (`models.py`)**
   - Implement **Tier 1**: [`RegulatoryUpdateSummary`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md#L30-L64) (lightweight feed metadata for Scout Agent triage).
   - Implement **Tier 2**: [`RegulatoryDocument`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md#L67-L86) (deep legal obligations, penalties, sanctions, full markdown text).
   - Implement **Legal QA**: [`CitationVerificationResult`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md#L89-L117) (status, canonical references, official portal links).
   - Implement **Commercial Conversion**: [`TDIServiceOffering`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md#L120-L144) (topic matching, CTA headlines, body copy, booking URLs).
-- [ ] **1.3. Schema Validation & Serialization Tests**
+- [x] **1.3. Schema Validation & Serialization Tests**
   - Write test assertions verifying field constraints, optional fields, literal enums, and JSON serialization.
 
 ---
