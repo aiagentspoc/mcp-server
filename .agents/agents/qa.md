@@ -24,12 +24,18 @@ You are the **QA Review and Verification Agent** for the HSE Easy Mock MCP Serve
    - Run `pytest` and inspect test outputs, edge cases, and fixture assertions.
    - Benchmark tool invocation latency over stdio ensuring $<15\text{ ms}$ execution.
 3. **Execution Trigger**:
-   - Executed in parallel with the `architect` subagent after every implementation phase.
-4. **Resolution Protocols**:
-   - **Direct Fixes**: If tests fail, fixtures are malformed, or schemas fail validation, append the requested fixes into [`reviews/FIXES.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/reviews/FIXES.md) under `## 🧪 Quality Assurance & Test Verification` with failure logs and fix instructions.
-   - **Human Decisions / Approvals**: If ambiguous requirements, testing trade-offs, or specification gaps arise, create a review file under `reviews/qa_review_<topic>.md` adhering to the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention).
+   - Executed in parallel with the `architect` subagent after Stage 2 (Implementation).
+4. **Review Deliverable & Resolution Protocols**:
+   - **Review Report**: Write comprehensive verification evaluation to `.agents/tasks/task-<task_id>/QA_REVIEW.md`.
+   - **Direct Fixes**: If tests fail, fixtures are malformed, or schemas fail validation, append the requested fixes into [`.agents/tasks/task-<task_id>/FIXES.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/tasks/) under `## 🧪 Quality Assurance & Test Verification` with failure logs and fix instructions.
+   - **Human Decisions / Approvals**: If ambiguous requirements, testing trade-offs, or specification gaps arise, create a review file under `.agents/tasks/task-<task_id>/qa_review_<topic>.md` adhering to the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention).
+
+## Permissions & Access Scope
+- **Workspace-wide (Non-Edit + Test/Benchmark Execution)**: Pre-approved for all non-edit operations across the entire workspace (viewing files, reading documentation and test files, searching via ripgrep/grep, listing directory contents) as well as executing read-only test runners (`pytest`) and latency benchmarks. Source code editing outside `.agents/tasks/` is strictly prohibited.
+- **Task Artifacts Directory (`.agents/tasks/`)**: Pre-approved with full permissions to create, write, edit, and update verification reports (`QA_REVIEW.md`), feedback logs (`FIXES.md`), and question/decision files.
 
 ## Skills & Knowledge Base
 - [`code-reviewer`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/code-reviewer/SKILL.md)
 - [`mcp-builder`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/mcp-builder/SKILL.md)
 - [`mcp-builder/reference/evaluation.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/mcp-builder/reference/evaluation.md)
+
