@@ -26,9 +26,9 @@ Leverage the specialized workspace skills below for their respective task domain
 | Skill | Path | Accessible By | When to Use |
 | :--- | :--- | :--- | :--- |
 | **`implement`** | [`.agents/skills/implement/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/implement/SKILL.md) | Main Agent | **Automated roadmap task implementation workflow.** Invoked via `/implement <task_id>` (e.g. `/implement 1.2`), `/implement task <task_id>`, or task implementation prompts. |
-| **`mcp-builder`** | [`.agents/skills/mcp-builder/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/mcp-builder/SKILL.md) | Main Agent, `architect`, `qa` | **Creating, implementing, testing, or evaluating MCP servers & tools.** Provides best practices for FastMCP/TypeScript SDKs, stdio transports, tool schemas, annotations, and automated evaluation suites. |
+| **`mcp-builder`** | [`.agents/skills/mcp-builder/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/mcp-builder/SKILL.md) | Main Agent, `jules`, `architect`, `qa` | **Creating, implementing, testing, or evaluating MCP servers & tools.** Provides best practices for FastMCP/TypeScript SDKs, stdio transports, tool schemas, annotations, and automated evaluation suites. |
 | **`architect-review`** | [`.agents/skills/architect-review/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/architect-review/SKILL.md) | Main Agent, `architect` | **System design and architectural reviews.** Provides guidance for evaluating structural changes, modular boundaries, scalability, resilience, clean architecture, and distributed patterns. |
-| **`code-reviewer`** | [`.agents/skills/code-reviewer/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/code-reviewer/SKILL.md) | Main Agent, `architect`, `qa` | **Code quality, static analysis, and security auditing.** Use when reviewing pull requests, inspecting diffs, checking OWASP security, enforcing type safety, and optimizing performance. |
+| **`code-reviewer`** | [`.agents/skills/code-reviewer/SKILL.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/skills/code-reviewer/SKILL.md) | Main Agent, `jules`, `architect`, `qa` | **Code quality, static analysis, and security auditing.** Use when reviewing pull requests, inspecting diffs, checking OWASP security, enforcing type safety, and optimizing performance. |
 
 ---
 
@@ -43,7 +43,7 @@ flowchart TD
     Trigger["User prompt: '/implement 1.2' or 'implement Task x of Phase x'"] --> Resolve["Resolve task requirements from ROADMAP.md"]
     Resolve --> Stage1["Stage 1: Implementation Plan<br/>• Model: gemini-3.1-pro-high (Pro reasoning)<br/>• Output: .agents/tasks/task-xx/PLAN.md"]
     Stage1 --> Gate{"Human Approval Gate<br/>Agent halts & presents plan"}
-    Gate -->|User Approves| Stage2["Stage 2: Autonomous Implementation<br/>• Model: gemini-3.7-flash-high (Fast execution)<br/>• Permissions: Pre-approved full autonomous execution<br/>• Zero approvals required during Stage 2<br/>• Runs 'git diff' to write WALKTHROUGH.md<br/>• Output: .agents/tasks/task-xx/WALKTHROUGH.md"]
+    Gate -->|User Approves| Stage2["Stage 2: Autonomous Implementation<br/>• Agent: JULES<br/>• Permissions: Full unrestricted permissions to perform any action<br/>• Zero approvals required during Stage 2<br/>• Runs 'git diff' to write WALKTHROUGH.md<br/>• Output: .agents/tasks/task-xx/WALKTHROUGH.md"]
     Gate -->|User Requests Changes| Stage1
     Stage2 --> Stage3["Stage 3: Parallel Review<br/>• Model: gemini-3.1-pro-high (Pro reasoning)<br/>• Subagents in parallel: architect & qa<br/>• Output: ARCHITECT_REVIEW.md & QA_REVIEW.md"]
 ```
@@ -64,12 +64,12 @@ flowchart TD
 
 ### 3.2. Stage 2: Autonomous Implementation (Upon Human Approval)
 * **Trigger**: Starts **only after explicit human approval** of the Stage 1 plan.
-* **Agent / Model**: Antigravity with `gemini-3.7-flash-high` (`flash` high-speed execution).
+* **Agent**: **Jules** (Google AI coding agent, invoked via Google AI's `jules` CLI / [`jules`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/agents/jules.md)).
 * **Permissions & Autonomy**:
-  * **Full Autonomous Execution**: Pre-approved for all file reads, creations, edits, deletions, and terminal command executions (e.g., `uv sync`, `pytest`, `python`, `git diff`, benchmarks).
+  * **All Permissions / Unrestricted Autonomous Action**: Jules is granted full, unrestricted permissions to perform any action required to complete the task across the entire workspace (including but not limited to: creating, reading, editing, and deleting files; managing dependencies; executing arbitrary terminal commands, scripts, tests, and benchmarks; git operations; applying session patches via `jules remote pull` / `jules teleport`; and modifying directory structures). Zero human approvals or pauses required during Stage 2.
 * **Action**:
-  1. Write and edit code according to `.agents/tasks/task-<task_id>/PLAN.md`.
-  2. Run automated validation commands (e.g. `uv sync`, `pytest`, syntax compilation).
+  1. Trigger Google AI's Jules agent (via `jules new "<prompt>"` or direct execution) passing the approved `.agents/tasks/task-<task_id>/PLAN.md` instructions. Jules implements the code changes autonomously.
+  2. Run automated validation commands (e.g. `uv sync`, `pytest`, syntax and type checks).
   3. **Diff-driven Walkthrough**: Run `git diff` via terminal to inspect actual workspace modifications. The walkthrough **MUST be generated strictly from the actual `git diff` output** (not from implementation memory), explaining the exact changes, structure, rationale, and verification results without embedding the raw `git diff` patch block.
   4. Automatically proceed directly to Stage 3 (Parallel Review) without pausing for human input.
 * **Deliverable**: Save `.agents/tasks/task-<task_id>/WALKTHROUGH.md` detailing the changes made, rationale, and verification results.
@@ -92,7 +92,7 @@ flowchart TD
   1. In each review pass, `architect` and `qa` record their findings in their respective review files (`ARCHITECT_REVIEW.md` and `QA_REVIEW.md`) and write any actionable fixes to `.agents/tasks/task-<task_id>/FIXES.md`.
   2. Once both subagents complete their review pass:
      - If both approve with no fixes requested: The review cycle completes with full sign-off.
-     - If fixes are requested: Main agent reads `.agents/tasks/task-<task_id>/FIXES.md` (and the review files), applies all requested fixes in a unified pass, cleans up `FIXES.md`, and re-invokes `architect` and `qa` for the next review iteration.
+     - If fixes are requested: JULES reads `.agents/tasks/task-<task_id>/FIXES.md` (and the review files), applies all requested fixes in a unified pass, cleans up `FIXES.md`, and re-invokes `architect` and `qa` for the next review iteration.
   3. **Loop Boundary**: A maximum of **3 review iterations** is allowed.
   4. If unresolved issues or trade-offs remain after 3 iterations: The agent creates a human review file under `.agents/tasks/task-<task_id>/` formatted according to the [Mandatory Question Convention](#4-mandatory-question-convention).
 

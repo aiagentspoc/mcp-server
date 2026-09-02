@@ -1,96 +1,60 @@
-# Task Implementation Workflow Runbook
+# Automated Task Implementation Workflow
 
-**Trigger**: Prompts matching `/implement <task_id>`, `/implement task <task_id>`, or `"implement Task x of Phase x"` (e.g. `/implement 1.2`, `/implement task 1.2`, `"implement Task 1.2 of Phase 1"`).
+This document details the standardized 3-stage automated implementation workflow for roadmap tasks within the **HSE Easy Mock MCP Server** project.
+
+---
+
+## Workflow Overview
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    actor User
-    participant Main as Antigravity (gemini-3.1-pro-high)
-    participant Exec as Antigravity (gemini-3.7-flash-high)
-    participant Arch as Subagent: architect (Pro)
-    participant QA as Subagent: qa (Pro)
-
-    User->>Main: "/implement 1.2" (or "implement Task 1.2")
-    Note over Main: Stage 1: Planning
-    Main->>Main: Resolve Task 1.2 in ROADMAP, SPECS, ARCHITECTURE
-    Main->>Main: Write .agents/tasks/task-1.2/PLAN.md
-    Main->>User: Present Plan & Await Approval
-    
-    User->>Exec: Approve Plan ("Proceed")
-    Note over Exec: Stage 2: Implementation
-    Exec->>Exec: Execute .agents/tasks/task-xx/PLAN.md
-    Exec->>Exec: Implement code, models, fixtures, tests
-    Exec->>Exec: Run validations (uv sync, pytest)
-    Exec->>Exec: Run git diff & generate WALKTHROUGH.md
-    
-    Note over Arch,QA: Stage 3: Parallel Review
-    Exec->>Arch: invoke_subagent(architect, model='pro')
-    Exec->>QA: invoke_subagent(qa, model='pro')
-    
-    par Architecture Review
-        Arch->>Arch: Check design, FastMCP stdio, typing
-        Arch->>Arch: Write .agents/tasks/task-xx/ARCHITECT_REVIEW.md
-        alt Direct Fixes
-            Arch-->>Main: Write .agents/tasks/task-xx/FIXES.md
-        else Human Decisions
-            Arch->>User: Write .agents/tasks/task-xx/architect_review_<topic>.md (4-part format)
-        end
-    and QA Review
-        QA->>QA: Run pytest & benchmark latency (<15ms)
-        QA->>QA: Write .agents/tasks/task-xx/QA_REVIEW.md
-        alt Test Failures
-            QA-->>Main: Write .agents/tasks/task-xx/FIXES.md
-        else Human Decisions
-            QA->>User: Write .agents/tasks/task-xx/qa_review_<topic>.md (4-part format)
-        end
-    end
+flowchart TD
+    Trigger["User prompt: '/implement <task_id>' or 'implement Task x of Phase x'"] --> Resolve["Resolve task requirements from ROADMAP.md"]
+    Resolve --> Stage1["Stage 1: Implementation Plan<br/>• Model: gemini-3.1-pro-high (Pro reasoning)<br/>• Output: .agents/tasks/task-xx/PLAN.md"]
+    Stage1 --> Gate{"Human Approval Gate<br/>Agent halts & presents plan"}
+    Gate -->|User Approves| Stage2["Stage 2: Autonomous Implementation<br/>• Agent: JULES<br/>• Permissions: Full unrestricted permissions to perform any action<br/>• Zero approvals required during Stage 2<br/>• Runs 'git diff' to write WALKTHROUGH.md<br/>• Output: .agents/tasks/task-xx/WALKTHROUGH.md"]
+    Gate -->|User Requests Changes| Stage1
+    Stage2 --> Stage3["Stage 3: Parallel Review<br/>• Model: gemini-3.1-pro-high (Pro reasoning)<br/>• Subagents in parallel: architect & qa<br/>• Output: ARCHITECT_REVIEW.md & QA_REVIEW.md"]
 ```
 
 ---
 
-## Stage 1: Implementation Plan
-1. Retrieve task specifications from [ROADMAP.md](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/ROADMAP.md), [SPECIFICATIONS.md](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md), and [ARCHITECTURE.md](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/ARCHITECTURE.md).
-2. Model: `gemini-3.1-pro-high` (`pro` deep reasoning).
-3. Required Sections in `PLAN.md`:
-   - `## 1. Context & Task Scope`
-   - `## 2. Prerequisites` (if any)
-   - `## 3. Objectives`
-   - `## 4. Proposed Changes & Specifications`
-   - `## 5. Verification Strategy`
-   - `## 6. Questions & Decisions for Human Approval` (if any design decisions or choices require human input; **MUST** follow the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention))
-4. Deliverable: Save structured plan as `.agents/tasks/task-<task_id>/PLAN.md`.
-5. **Human Approval Gate**: Stop and wait for user approval (including resolution of any questions in Section 6) before moving to Stage 2.
+## Stage Breakdown
 
----
+### 1. Stage 1: Implementation Plan
+* **Agent / Model**: Antigravity with `gemini-3.1-pro-high` (`pro` deep reasoning).
+* **Action**:
+  1. Retrieve task details from [`ROADMAP.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/ROADMAP.md), [`SPECIFICATIONS.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/SPECIFICATIONS.md), and [`ARCHITECTURE.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/docs/ARCHITECTURE.md).
+  2. Formulate a structured plan with the following **mandatory sections**:
+     - `## 1. Context & Task Scope`
+     - `## 2. Prerequisites` (if any, e.g. previous tasks or runtime tools)
+     - `## 3. Objectives`
+     - `## 4. Proposed Changes & Specifications` (including exact file paths, schemas, and logic)
+     - `## 5. Verification Strategy` (test commands, deterministic assertions)
+     - `## 6. Questions & Decisions for Human Approval` (if any design decisions, ambiguities, or choices require human input; **MUST** follow the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention))
+* **Deliverable**: Save the plan as `.agents/tasks/task-<task_id>/PLAN.md`.
+* **Human Approval Requirement**: Stop and ask user for approval before writing code or running Stage 2.
 
-## Stage 2: Autonomous Implementation (Upon Human Approval)
-1. **Trigger**: Starts immediately after explicit human approval of Stage 1 plan.
-2. **Model**: `gemini-3.7-flash-high` (`flash` execution).
-3. **Permissions & Autonomy**:
-   - **Full Execution Permission**: Pre-authorized for all file reads, creations, edits, deletions, directory operations, and terminal commands (`uv`, `pytest`, `python`, `git diff`, benchmarks, etc.) within the workspace.
-4. **Execution Steps**:
-   - Write and edit code according to `.agents/tasks/task-<task_id>/PLAN.md`.
-   - Validate locally (e.g. `uv sync`, `pytest`, `python -m py_compile`).
-   - Run `git diff` via terminal to inspect actual repository modifications, and generate `WALKTHROUGH.md` strictly using the `git diff` output (not from implementation memory), explaining exact modifications, architecture, and verification results without embedding the raw `git diff` patch block.
-   - Automatically transition directly to Stage 3 (Parallel Review) upon walkthrough completion without stopping.
-5. **Deliverable**: Save summary as `.agents/tasks/task-<task_id>/WALKTHROUGH.md`.
+### 2. Stage 2: Autonomous Implementation (Upon Human Approval)
+* **Trigger**: Starts **only after explicit human approval** of the Stage 1 plan.
+* **Agent**: **Jules** (Google AI coding agent, invoked via Google AI's `jules` CLI / [`jules`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/agents/jules.md)).
+* **Permissions & Autonomy**:
+  * **All Permissions / Unrestricted Autonomous Action**: Jules is granted full, unrestricted permissions to perform any action required across the workspace (file operations, package management, test execution, benchmarks, git operations, CLI session creation and pulling patches via `jules`, arbitrary terminal commands). Zero interactive human approvals required during Stage 2.
+* **Action**:
+  1. Trigger Google AI's Jules agent (via `jules new "<prompt>"` or direct CLI session) with the approved `.agents/tasks/task-<task_id>/PLAN.md` instructions. Jules implements the code changes autonomously.
+  2. Run automated validation commands (e.g. `uv sync`, `pytest`, syntax and type checks).
+  3. **Diff-driven Walkthrough**: Run `git diff` via terminal to inspect actual workspace modifications. The walkthrough **MUST be generated strictly from the actual `git diff` output** (not from implementation memory), explaining the exact changes, structure, rationale, and verification results without embedding the raw `git diff` patch block.
+  4. Automatically proceed directly to Stage 3 (Parallel Review) without pausing for human input.
+* **Deliverable**: Save `.agents/tasks/task-<task_id>/WALKTHROUGH.md`.
 
----
-
-## Stage 3: Parallel Review & Iterative Fix Loop (Max 3 Iterations)
-1. **Parallel Execution**: Invoke subagents `architect` and `qa` concurrently using `invoke_subagent` with `Model: 'pro'`.
-2. **Reviewer Permissions**:
-   - **Workspace-wide (Non-Edit)**: Pre-approved for all read, search, listing, and test/benchmark command executions. Code editing outside `.agents/tasks/` is strictly prohibited.
-   - **Task Directory (`.agents/tasks/`)**: Full create, write, and edit permissions within `.agents/tasks/` for reviews, logs, and question files.
-3. **Review Deliverables**:
-   - `architect` generates `.agents/tasks/task-<task_id>/ARCHITECT_REVIEW.md`.
-   - `qa` generates `.agents/tasks/task-<task_id>/QA_REVIEW.md`.
-4. **Consolidated Feedback**: Subagents record actionable fixes in `.agents/tasks/task-<task_id>/FIXES.md`.
-5. **Unified Fix & Re-Invocation**:
-   - Once both passes complete, the main agent applies all fixes in one unified pass.
-   - The main agent cleans up `FIXES.md` and re-invokes `architect` and `qa` for verification until full sign-off.
-   - A maximum of **3 review iterations** is allowed.
-6. **Human Decisions**: If trade-offs remain after 3 iterations, generate a review file under `.agents/tasks/task-<task_id>/` adhering to the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention).
-7. Detailed runbook: [`.agents/workflows/review_cycle.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/workflows/review_cycle.md).
-
+### 3. Stage 3: Parallel Review & Iterative Fix Loop (Max 3 Iterations)
+* **Subagents**: Invoke both `architect` and `qa` in parallel using `invoke_subagent` with `Model: 'pro'` (`gemini-3.1-pro-high`).
+* **Permissions & Autonomy**:
+  * **Workspace-wide (Non-Edit)**: Pre-approved for non-edit operations across the entire workspace (viewing files, reading docs/code, searching via grep, listing directories, read-only test runner execution `pytest`, and benchmark latency profiling).
+  * **Task Directory (`.agents/tasks/`)**: Full create, write, and edit permissions within `.agents/tasks/` (`ARCHITECT_REVIEW.md`, `QA_REVIEW.md`, `FIXES.md`, and review files).
+* **Consolidated Feedback & Iterative Fix Loop**:
+  1. In each review pass, `architect` and `qa` record their findings in `ARCHITECT_REVIEW.md` and `QA_REVIEW.md` and write any actionable fixes to `FIXES.md`.
+  2. Once both subagents complete their review pass:
+     - If both approve with no fixes requested: Complete review cycle with full sign-off.
+     - If fixes are requested: JULES reads `.agents/tasks/task-<task_id>/FIXES.md` (and review files), applies all requested fixes in a unified pass, cleans up `FIXES.md`, and re-invokes `architect` and `qa` for the next review iteration.
+  3. **Loop Boundary**: A maximum of **3 review iterations** is allowed.
+  4. If unresolved issues or trade-offs remain after 3 iterations: Create a human review file adhering to the [Mandatory Question Convention](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md#4-mandatory-question-convention).
