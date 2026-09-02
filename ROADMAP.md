@@ -15,9 +15,9 @@ gantt
     Pydantic v2 Schemas (models.py)                     :done, p1_2, 2026-08-27, 1d
     Schema & Serialization Tests (test_models.py)       :done, p1_3, 2026-08-27, 1d
     section Phase 2: Fixture Datasets
-    Regulatory Corpus (regulatory_docs.json)            :p2_1, after p1_2, 1d
-    Citation Verification Registry (citations.json)     :p2_2, after p2_1, 1d
-    TDI Commercial Catalog (tdi_services.json)          :p2_3, after p2_2, 1d
+    Regulatory Corpus (regulatory_docs.json)            :done, p2_1, after p1_2, 1d
+    Citation Verification Registry (citations.json)     :done, p2_2, after p2_1, 1d
+    TDI Commercial Catalog (tdi_services.json)          :done, p2_3, after p2_2, 1d
     section Phase 3: FastMCP Tool Implementation
     Server Lifecycle & Startup Indexing (server.py)     :p3_1, after p2_3, 1d
     Implement 5 Core MCP Tools                          :p3_2, after p3_1, 1d
@@ -58,18 +58,18 @@ gantt
 * **Goal**: Author 100% deterministic seed datasets in `fixtures/` with zero external cloud or database dependencies.
 
 ### Tasks
-- [ ] **2.1. Regulatory Corpus (`fixtures/regulatory_docs.json`)**
+- [x] **2.1. Regulatory Corpus (`fixtures/regulatory_docs.json`)**
   - Seed **5 comprehensive HSE legal scenarios**:
     1. `eurlex-dir-2024-869` (EUR-Lex: Lead & Diisocyanates biological limits).
     2. `eurlex-reg-2023-1230` (EUR-Lex: Machinery Regulation & AI safety).
     3. `gu-2024-dl-preposti` (Gazzetta Ufficiale: Preposti appointment & refresher training).
     4. `gu-2023-dm-antincendio` (Gazzetta Ufficiale: High-risk plant fire safety & certification).
     5. `inail-2024-circ-calore` (INAIL: Heat stress protocol in construction & agriculture).
-- [ ] **2.2. Legal Citations Registry (`fixtures/citations.json`)**
+- [x] **2.2. Legal Citations Registry (`fixtures/citations.json`)**
   - Populate active/valid citations: `D.Lgs. 81/2008 Art. 37`, `D.Lgs. 81/2008 Art. 18`, `Direttiva 2004/37/CE`, `Regolamento (UE) 2023/1230 Art. 10`, `Circolare INAIL 28/2024`.
   - Populate invalid/repealed test citations: `D.P.R. 547/55 Art. 10`, `D.Lgs. 626/94 Art. 3`, `Direttiva 98/37/CE`.
   - Include multi-alias normalization index (case-insensitivity, spacing variations).
-- [ ] **2.3. Commercial Services & CTAs (`fixtures/tdi_services.json`)**
+- [x] **2.3. Commercial Services & CTAs (`fixtures/tdi_services.json`)**
   - Seed 4 TDI commercial offerings with conversion-oriented copy:
     1. `tdi-srv-preposti-training` (Preposti training & updates).
     2. `tdi-srv-chemical-audit` (Chemical & CMRD substances audit).

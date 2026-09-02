@@ -1,0 +1,85 @@
+[
+  {
+    "service_id": "tdi-srv-preposti-training",
+    "service_name": "Corso di Formazione e Aggiornamento Preposti (D.Lgs. 81/08)",
+    "topic_category": "workplace_safety",
+    "applicable_sectors": [
+      "construction",
+      "manufacturing",
+      "logistics",
+      "services",
+      "plant_engineering"
+    ],
+    "value_proposition": "Percorsi formativi certificati in presenza e blended per adempiere all'obbligo di aggiornamento biennale dei preposti introdotto dalla Legge 215/2021 e rafforzare le competenze di vigilanza operativa.",
+    "cta_headline": "Adeguati ai nuovi obblighi formativi per i Preposti prima delle verifiche ispettive.",
+    "cta_body": "La mancata formazione o l'omesso aggiornamento biennale dei preposti comporta sanzioni penali dirette con arresto o ammenda fino a 5.000€ per datori di lavoro e dirigenti. Pianifica il piano formativo certificato con TDI.",
+    "landing_page_url": "https://www.tdigroup.it/servizi/formazione-sicurezza-preposti"
+  },
+  {
+    "service_id": "tdi-srv-chemical-audit",
+    "service_name": "Audit di Conformità Rischio Chimico e Sostanze CMRD",
+    "topic_category": "chemical_risk",
+    "applicable_sectors": [
+      "chemical",
+      "pharmaceutical",
+      "manufacturing",
+      "automotive",
+      "metalworking",
+      "waste_management"
+    ],
+    "value_proposition": "Valutazione specialistica dell'esposizione professionale ad agenti chimici pericolosi, cancerogeni, mutageni e reprotossici con monitoraggio biologico e campionamento ambientale conforme alla Direttiva (UE) 2024/869.",
+    "cta_headline": "Aggiorna la valutazione rischio chimico e i valori limite biologici con i tecnici TDI.",
+    "cta_body": "Con l'entrata in vigore dei nuovi limiti europei per piombo e diisocianati, è obbligatorio adeguare il DVR chimico e i protocolli di sorveglianza sanitaria. Richiedi un audit tecnico preliminare con i nostri igienisti industriali.",
+    "landing_page_url": "https://www.tdigroup.it/servizi/audit-rischio-chimico-cmrd"
+  },
+  {
+    "service_id": "tdi-srv-machinery-ce",
+    "service_name": "Consulenza Nuovo Regolamento Macchine (UE) 2023/1230 e Marcatura CE",
+    "topic_category": "machinery",
+    "applicable_sectors": [
+      "machinery_manufacturing",
+      "industrial_automation",
+      "robotics",
+      "metalworking",
+      "packaging"
+    ],
+    "value_proposition": "Supporto ingegneristico per la transizione dalla Direttiva 2006/42/CE al Regolamento (UE) 2023/1230: gap analysis tecnica, valutazione rischi cybersecurity/AI applicata alla sicurezza macchine e fascicolo tecnico CE.",
+    "cta_headline": "Verifica la conformità del tuo parco macchine al nuovo Regolamento UE 2023/1230.",
+    "cta_body": "Il nuovo Regolamento Macchine impone requisiti stringenti per software di sicurezza, intelligenza artificiale e istruzioni digitali. Affidati agli esperti TDI per aggiornare la marcatura CE ed evitare blocchi commerciali.",
+    "landing_page_url": "https://www.tdigroup.it/servizi/consulenza-regolamento-macchine-ce"
+  },
+  {
+    "service_id": "tdi-srv-heat-stress",
+    "service_name": "Protocollo Valutazione Rischio Microclima e Stress da Calore",
+    "topic_category": "heat_stress",
+    "applicable_sectors": [
+      "construction",
+      "agriculture",
+      "foundry",
+      "logistics",
+      "road_works",
+      "outdoor_activities"
+    ],
+    "value_proposition": "Integrazione del Documento di Valutazione dei Rischi (DVR) con indici microclimatici avanzati (WBGT, PHS, Worklimate) e protocolli operativi di emergenza caldo conformi alle linee guida INAIL 2024.",
+    "cta_headline": "Proteggi i tuoi lavoratori all'aperto: richiedi il protocollo anti-calore personalizzato.",
+    "cta_body": "Temperature elevate e ondate di calore sopra i 35°C richiedono misure organizzative immediate, pause designate e accesso alla CIGO caldo. Richiedi il protocollo operativo TDI per tutelare i lavoratori ed evitare sanzioni.",
+    "landing_page_url": "https://www.tdigroup.it/servizi/valutazione-microclima-stress-termico"
+  },
+  {
+    "service_id": "tdi-srv-fire-safety",
+    "service_name": "Consulenza Antincendio e Piani di Emergenza (D.M. GSA e Minispazi)",
+    "topic_category": "fire_safety",
+    "applicable_sectors": [
+      "manufacturing",
+      "high_risk_plants",
+      "logistics",
+      "chemical",
+      "commercial_activities",
+      "all_sectors"
+    ],
+    "value_proposition": "Valutazione del rischio incendio, redazione e aggiornamento dei Piani di Emergenza ed Evacuazione (PEE) e percorsi di formazione/aggiornamento per addetti antincendio ai sensi dei D.M. 1, 2 e 3 Settembre 2021.",
+    "cta_headline": "Allinea la gestione antincendio aziendale ai Decreti Ministeriali 2021.",
+    "cta_body": "La mancata adozione o il mancato aggiornamento del piano di emergenza nei luoghi di lavoro comporta l'arresto da 2 a 4 mesi o ammenda fino a 6.000€. Prenota una verifica tecnica dello stato di conformità antincendio con TDI.",
+    "landing_page_url": "https://www.tdigroup.it/servizi/consulenza-antincendio-piani-emergenza"
+  }
+]

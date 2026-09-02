@@ -1,0 +1,230 @@
+[
+  {
+    "doc_id": "eurlex-dir-2024-869",
+    "source": "EUR_LEX",
+    "doc_type": "directive",
+    "official_reference": "Direttiva (UE) 2024/869",
+    "title": "Direttiva (UE) 2024/869 del Parlamento europeo e del Consiglio del 13 marzo 2024 che modifica la direttiva 2004/37/CE e la direttiva 98/24/CE per quanto riguarda i valori limite di esposizione professionale per piombo e i suoi composti inorganici e per i diisocianati",
+    "publication_date": "2024-03-19",
+    "effective_date": "2024-04-08",
+    "impact_level": "critical",
+    "topic_tags": [
+      "chemical_risk",
+      "occupational_health",
+      "cmrd_substances",
+      "biological_limits",
+      "lead",
+      "diisocyanates"
+    ],
+    "summary": "La Direttiva (UE) 2024/869 riduce significativamente i valori limite di esposizione professionale (OEL) e i valori limite biologici (BLV) per il piombo e i suoi composti inorganici, introducendo contestualmente per la prima volta valori limite vincolanti per i diisocianati a livello dell'Unione Europea. Gli Stati membri devono recepire la direttiva entro il 9 aprile 2026, imponendo alle imprese una revisione straordinaria della valutazione del rischio chimico e dei protocolli di sorveglianza sanitaria.",
+    "canonical_url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32024L0869",
+    "status": "in_force",
+    "target_sectors": [
+      "manufacturing",
+      "chemical_industry",
+      "construction",
+      "automotive",
+      "metallurgy",
+      "plastics_and_polyurethanes",
+      "battery_manufacturing"
+    ],
+    "key_obligations": [
+      "Riduzione del valore limite biologico (BLV) per il piombo inorganico a 15 µg Pb/100 ml di sangue (rispetto ai precedenti 70 µg/100 ml con fase transitoria a 30 µg/100 ml fino al 2028).",
+      "Introduzione del valore limite di esposizione professionale per i diisocianati pari a 6 µg NCO/m³ (media ponderata su 8 ore) e 12 µg NCO/m³ (limite per esposizione di breve durata 15 min).",
+      "Obbligo di sorveglianza sanitaria rafforzata e monitoraggio biologico periodico per tutti i lavoratori esposti a concentrazioni di piombo superiori a 0,015 mg/m³ o con piombemia > 9 µg Pb/100 ml.",
+      "Obbligo di formazione specifica e certificata per tutti i lavoratori e preposti addetti alla manipolazione o lavorazione industriale di miscele contenenti diisocianati (Regolamento REACH / Restrizione n. 74)."
+    ],
+    "penalties_summary": "In sede di recepimento nazionale (D.Lgs. 81/2008 Art. 262): arresto da 3 a 6 mesi o ammenda da €3.071,27 a €7.862,44 per il datore di lavoro e dirigenti per omessa o insufficiente valutazione del rischio chimico e mancata effettuazione della sorveglianza sanitaria.",
+    "related_citations": [
+      "Direttiva 2004/37/CE",
+      "Direttiva 98/24/CE",
+      "D.Lgs. 81/2008 Titolo IX Capo I e II",
+      "D.Lgs. 81/2008 Art. 223",
+      "D.Lgs. 81/2008 Art. 242",
+      "Regolamento (CE) n. 1907/2006 (REACH)"
+    ],
+    "content_markdown": "# Direttiva (UE) 2024/869 del Parlamento europeo e del Consiglio del 13 marzo 2024\n\n## 1. Ambito e Finalità\nLa Direttiva (UE) 2024/869 aggiorna le tutele per i lavoratori contro i rischi derivanti dall'esposizione ad agenti chimici pericolosi e cancerogeni, mutageni o reprotossici (CMRD). L'atto modifica formalmente la **Direttiva 2004/37/CE** (protezione dei lavoratori contro i rischi derivanti da agenti cancerogeni, mutageni o da sostanze tossiche per la riproduzione) e la **Direttiva 98/24/CE** (protezione dei lavoratori contro i rischi chimici).\n\nL'obiettivo primario è ridurre l'incidenza di patologie professionali croniche (saturnismo, neuropatie, disfunzioni renali ed effetti nocivi sulla fertilità e sullo sviluppo fetale derivanti dal piombo; asma professionale e sensibilizzazione respiratoria grave dovuta ai diisocianati).\n\n## 2. Nuovi Valori Limite per Piombo e Composti Inorganici\n\n### 2.1 Valore Limite di Esposizione Professionale (OEL / TWA 8h)\n- **Nuovo valore a regime**: `0,03 mg/m³` (misurato come piombo nell'aria, frazione inalabile).\n- **Periodo transitorio fino al 31 dicembre 2028**: `0,03 mg/m³` (già cogente in via prioritaria).\n\n### 2.2 Valore Limite Biologico Vincolare (BLV)\n- **Nuovo limite a regime (dal 1° gennaio 2029)**: `15 µg Pb/100 ml di sangue` (per tutti i lavoratori esposti).\n- **Fase transitoria (fino al 31 dicembre 2028)**: `30 µg Pb/100 ml di sangue`.\n- **Lavoratrici in età fertile**: Livello di piombo nel sangue non superiore al valore di riferimento della popolazione non esposta professionalmente (raccomandazione < `4,5 µg Pb/100 ml`).\n\n## 3. Nuovi Valori Limite per i Diisocianati\nPer la prima volta vengono stabiliti valori limite vincolanti a livello dell'Unione Europea per il gruppo chimico dei diisocianati (misurati come NCO totale):\n\n| Parametro | Limite a Regime (dal 2029) | Limite Transitorio (fino al 31/12/2028) |\n| :--- | :--- | :--- |\n| **OEL 8 ore (TWA)** | `6 µg NCO/m³` | `10 µg NCO/m³` |\n| **STEL (Breve termine 15 min)** | `12 µg NCO/m³` | `20 µg NCO/m³` |\n\n## 4. Obblighi Operativi per Datori di Lavoro e RSPP\n1. **Revisione della Valutazione del Rischio Chimico**: Aggiornare immediatamente la sezione DVR (ai sensi dell'Art. 223 D.Lgs. 81/2008) includendo il monitoraggio analitico ambientale e i nuovi limiti OEL.\n2. **Sorveglianza Sanitaria e Monitoraggio Biologico**: Obbligatoria per tutti i lavoratori quando l'esposizione al piombo nell'aria supera `0,015 mg/m³` o la concentrazione ematica individuale supera `9 µg Pb/100 ml`.\n3. **Misure Tecniche e Organizzative**: Sostituzione delle sostanze pericolose, confinamento dei processi produttivi, installazione di aspirazioni localizzate (LEV) e fornitura di DPI di terza categoria per le vie respiratorie.\n4. **Formazione Obbligatoria Diisocianati**: Conformità alla restrizione n. 74 del Regolamento REACH (formazione di base, intermedia o avanzata con rilascio di attestato quinquennale).\n\n## 5. Quadro Sanzionatorio e Termini di Recepimento\n- **Termine di recepimento nazionale per gli Stati membri**: **9 aprile 2026**.\n- **Sanzioni applicabili in Italia (D.Lgs. 81/2008 Art. 262)**: Arresto da 3 a 6 mesi o ammenda da €3.071,27 a €7.862,44 per mancata valutazione del rischio o omessa sorveglianza sanitaria."
+  },
+  {
+    "doc_id": "eurlex-reg-2023-1230",
+    "source": "EUR_LEX",
+    "doc_type": "regulation",
+    "official_reference": "Regolamento (UE) 2023/1230",
+    "title": "Regolamento (UE) 2023/1230 del Parlamento europeo e del Consiglio del 14 giugno 2023 relativo alle macchine e che abroga la direttiva 2006/42/CE del Parlamento europeo e del Consiglio e la direttiva 73/361/CEE del Consiglio",
+    "publication_date": "2023-06-29",
+    "effective_date": "2027-01-20",
+    "impact_level": "high",
+    "topic_tags": [
+      "machinery",
+      "ce_marking",
+      "industrial_safety",
+      "ai_safety",
+      "cybersecurity",
+      "robotics"
+    ],
+    "summary": "Il Regolamento (UE) 2023/1230 sostituisce integralmente la Direttiva Macchine 2006/42/CE, armonizzando i requisiti essenziali di sicurezza e tutela della salute per macchine, componenti di sicurezza e quasi-macchine. Introduce requisiti normativi obbligatori per l'integrazione di sistemi di intelligenza artificiale, robot collaborativi autonomi (AMR) e protezione contro minacce di cybersecurity ai sistemi di comando di sicurezza.",
+    "canonical_url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32023R1230",
+    "status": "in_force",
+    "target_sectors": [
+      "manufacturing",
+      "machinery_and_automation",
+      "robotics",
+      "construction_equipment",
+      "agriculture_machinery",
+      "software_engineering"
+    ],
+    "key_obligations": [
+      "Valutazione obbligatoria dei rischi emergenti derivanti da componenti di sicurezza con comportamento auto-evolutivo basati su intelligenza artificiale o apprendimento automatico.",
+      "Protezione dell'hardware e del software dei circuiti di comando di sicurezza contro accessi non autorizzati, corruzione di dati e attacchi cyber (Requisito Essenziale 1.1.9).",
+      "Ammissibilità della documentazione d'uso, istruzioni operative e dichiarazione UE di conformità in formato digitale (con obbligo di fornitura cartacea gratuita su richiesta dell'acquirente al momento dell'acquisto).",
+      "Applicazione delle procedure di conformità con certificazione di tipo obbligatoria da parte di Organismo Notificato per le macchine ad alto rischio elencate nell'Allegato I, Parte A."
+    ],
+    "penalties_summary": "Sanzioni amministrative pecuniarie e divieto di commercializzazione/ritiro dal mercato ai sensi del D.Lgs. 17/2010 e del Regolamento (UE) 2019/1020 sulla vigilanza del mercato. Sanzioni fino a €150.000 e sequestro dei macchinari non conformi privi dei requisiti essenziali di sicurezza.",
+    "related_citations": [
+      "Direttiva 2006/42/CE",
+      "Regolamento (UE) 2019/1020",
+      "D.Lgs. 17/2010",
+      "D.Lgs. 81/2008 Art. 70",
+      "D.Lgs. 81/2008 Art. 71",
+      "Regolamento (UE) 2024/1689 (AI Act)"
+    ],
+    "content_markdown": "# Regolamento (UE) 2023/1230 del Parlamento europeo e del Consiglio del 14 giugno 2023\n\n## 1. Contesto Normativo ed Efficacia Diretta\nIl Regolamento (UE) 2023/1230 stabilisce le norme per l'immissione sul mercato e la messa in servizio nell'Unione europea di macchine, prodotti correlati e quasi-macchine. A differenza della precedente Direttiva 2006/42/CE, trattandosi di un **Regolamento europeo**, è direttamente applicabile in tutti gli Stati membri senza necessità di leggi di recepimento nazionali a far data dal **20 gennaio 2027**.\n\n## 2. Principali Novità Tecniche e Requisiti Essenziali di Sicurezza (RES)\n\n### 2.1 Intelligenza Artificiale e Algoritmi Auto-Evolutivi (RES 1.1.6 e 1.2.1)\n- I fabbricanti devono analizzare i rischi legati a sistemi di comando dotati di capacità di auto-apprendimento.\n- Le funzioni di sicurezza devono garantire che il comportamento della macchina rimanga sempre all'interno dei limiti di progetto prefissati e prevedibili, prevenendo decisioni autonome lesive per l'operatore.\n\n### 2.2 Cybersecurity e Protezione contro le Alterazioni (RES 1.1.9)\n- I circuiti di comando che svolgono funzioni di sicurezza devono essere progettati in modo da resistere ad attacchi cyber, connessioni wireless malevole o modifiche accidentali/illecite del software.\n- Obbligo di tracciabilità digitale di ogni modifica apportata al software di sicurezza installato sulla macchina.\n\n### 2.3 Robotica Collaborativa e Veicoli Autonomi (AMR / AGV)\n- Nuovi criteri di coesistenza uomo-macchina per robot industriali privi di barriere fisiche e macchine mobili a guida autonoma.\n\n### 2.4 Digitalizzazione del Manuale d'Uso e Dichiarazione CE\n- Le istruzioni per l'uso e la dichiarazione UE di conformità possono essere fornite esclusivamente in formato elettronico (es. QR code o download online).\n- **Condizione cogente**: Il fabbricante deve rendere accessibili le istruzioni digitali per almeno 10 anni e deve fornire gratuitamente una copia cartacea entro un mese su richiesta del cliente al momento dell'acquisto.\n\n## 3. Classificazione Macchine ad Alto Rischio (Allegato I)\nL'Allegato I è suddiviso in due categorie:\n- **Parte A**: Macchine e componenti con valutazione di conformità obbligatoria mediante Organismo Notificato (es. componenti di sicurezza software basati su IA).\n- **Parte B**: Macchine ad alto rischio con possibilità di controllo interno della produzione (modulo A) solo in presenza di norme armonizzate complete.\n\n## 4. Obblighi per Fabbricanti, Importatori e Utilizzatori\n1. **Fabbricanti**: Redazione fascicolo tecnico, marcatura CE, conformità RES Allegato III.\n2. **Importatori e Distributori**: Verifica preventiva della conformità documentale e tempestivo ritiro dal mercato dei prodotti non conformi.\n3. **Datori di lavoro utilizzatori**: Mantenimento della conformità ai sensi degli Artt. 70 e 71 del D.Lgs. 81/2008, divieto di modifiche sostanziali non autorizzate che alterino i livelli di sicurezza originari.\n\n## 5. Sanzioni e Vigilanza del Mercato\nIn caso di mancata conformità, le autorità nazionali applicano il sequestro amministrativo e sanzioni pecuniarie fino a €150.000 ai sensi del D.Lgs. 17/2010 e del Regolamento (UE) 2019/1020."
+  },
+  {
+    "doc_id": "gu-2024-dl-preposti",
+    "source": "GAZZETTA_UFFICIALE",
+    "doc_type": "decree",
+    "official_reference": "D.L. 19/2024 conv. L. 56/2024 / D.Lgs. 81/2008",
+    "title": "Decreto-Legge 2 marzo 2024, n. 19 convertito con modificazioni dalla L. 29 aprile 2024, n. 56: Nuovi obblighi di nomina e formazione per i Preposti (Modifiche agli Artt. 18, 19 e 37 D.Lgs. 81/2008)",
+    "publication_date": "2024-04-30",
+    "effective_date": "2024-05-01",
+    "impact_level": "critical",
+    "topic_tags": [
+      "workplace_safety",
+      "preposti_training",
+      "dvr",
+      "dlgs_81_08",
+      "subcontracting",
+      "surveillance"
+    ],
+    "summary": "Il D.L. 19/2024 (convertito in Legge 56/2024, c.d. Decreto PNRR 4) e la precedente Legge 215/2021 rafforzano il ruolo di garanzia del Preposto. Viene sancito l'obbligo espresso di individuazione e nomina scritta del preposto per le attività in appalto o subappalto, il dovere-potere di interruzione immediata delle lavorazioni in presenza di condotte insicure, e la frequenza obbligatoria biennale dei corsi di aggiornamento da svolgersi esclusivamente in presenza.",
+    "canonical_url": "https://www.gazzettaufficiale.it/eli/id/2024/04/30/24A02246/sg",
+    "status": "in_force",
+    "target_sectors": [
+      "construction",
+      "manufacturing",
+      "logistics",
+      "facility_management",
+      "energy_and_utilities",
+      "all_industries"
+    ],
+    "key_obligations": [
+      "Individuazione e nomina formale obbligatoria per iscritto del Preposto per tutte le attività svolte in regime di appalto e subappalto (Art. 18, comma 1, lett. b-bis D.Lgs. 81/2008).",
+      "Obbligo per il Preposto di intervenire tempestivamente per modificare comportamenti non conformi e interrompere immediatamente l'attività lavorativa in caso di persistente inosservanza o pericolo grave e immediato (Art. 19, comma 1, lett. a D.Lgs. 81/2008).",
+      "Frequenza obbligatoria biennale (ogni 2 anni) dei corsi di aggiornamento per i Preposti con divieto di erogazione in modalità e-learning asincrona (Art. 37, comma 7-ter D.Lgs. 81/2008).",
+      "Integrazione del Documento di Valutazione dei Rischi (DVR) aziendale con la mappatura delle figure preposte, i criteri di delega e le procedure di vigilanza continuativa."
+    ],
+    "penalties_summary": "Arresto da 2 a 4 mesi o ammenda da €1.842,76 a €7.371,04 per il datore di lavoro e dirigenti per omessa individuazione del preposto negli appalti o mancata formazione biennale. Sospensione dell'attività d'impresa ai sensi dell'Art. 14 D.Lgs. 81/2008 in caso di gravi violazioni in materia di sicurezza.",
+    "related_citations": [
+      "D.Lgs. 81/2008 Art. 18",
+      "D.Lgs. 81/2008 Art. 19",
+      "D.Lgs. 81/2008 Art. 37",
+      "D.Lgs. 81/2008 Art. 14",
+      "D.L. 146/2021 conv. L. 215/2021",
+      "D.L. 19/2024 conv. L. 56/2024"
+    ],
+    "content_markdown": "# Modifiche al D.Lgs. 81/2008: Disciplina dei Preposti e Rafforzamento della Vigilanza\n\n## 1. Quadro Normativo di Riferimento\nCon l'entrata in vigore della **Legge 29 aprile 2024, n. 56** (di conversione del **D.L. 19/2024**) e del precedente **D.L. 146/2021** (conv. **L. 215/2021**), il legislatore italiano ha operato una profonda revisione del **D.Lgs. 81/2008 (Testo Unico sulla Salute e Sicurezza sul Lavoro)**, incentrata sul potenziamento dei poteri gerarchici, di vigilanza e di intervento del Preposto.\n\n## 2. Modifiche Puntuali agli Articoli del Testo Unico\n\n### 2.1 Articolo 18: Obblighi del Datore di Lavoro e del Dirigente\n- **Comma 1, lettera b-bis**: Nell'ambito dello svolgimento di attività in regime di appalto o subappalto, i datori di lavoro committenti, appaltatori e subappaltatori devono espressamente individuare e comunicare formalmente per iscritto il personale che svolge il ruolo di **Preposto**.\n- I preposti devono essere chiaramente identificabili nel cantiere o nel luogo di lavoro affidato.\n\n### 2.2 Articolo 19: Obblighi e Poteri di Intervento del Preposto\n- **Comma 1, lettera a**: Il preposto ha l'obbligo di sovrintendere e vigilare sull'osservanza da parte dei singoli lavoratori dei loro obblighi di legge, nonché delle disposizioni aziendali in materia di salute e sicurezza e di uso dei mezzi di protezione collettivi e individuali.\n- **Potere di interruzione e conformazione**:\n  1. In caso di rilevazione di comportamenti non conformi alle disposizioni, il preposto interviene per modificare il comportamento fornendo le necessarie indicazioni operative.\n  2. In caso di mancata attuazione delle disposizioni impartite o di persistenza dell'inosservanza, il preposto **deve interrompere l'attività del lavoratore** e informare tempestivamente i superiori diretti.\n  3. In caso di rilevazione di deficienze di mezzi, attrezzature o condizioni di pericolo grave e immediato, il preposto **deve interrompere temporaneamente l'attività** e segnalare tempestivamente la situazione al datore di lavoro e al dirigente.\n\n### 2.3 Articolo 37: Formazione e Aggiornamento dei Preposti\n- **Comma 7-ter**: L'aggiornamento della formazione dei preposti deve essere effettuato con **cadenza almeno biennale** (e non più quinquennale) e comunque ogni qualvolta sia reso necessario in ragione dell'evoluzione dei rischi o all'insorgenza di nuovi rischi.\n- **Modalità didattica**: I corsi di formazione e aggiornamento per preposti devono svolgersi interamente **in presenza** (con divieto di e-learning asincrono per garantire l'efficacia dell'apprendimento relazionale e operativo).\n\n## 3. Obblighi di Aggiornamento del Documento di Valutazione dei Rischi (DVR)\nI datori di lavoro e i Responsabili del Servizio di Prevenzione e Protezione (RSPP) devono provvedere a:\n1. Mappare formalmente nell'organigramma della sicurezza aziendale tutti i soggetti che svolgono de facto o de jure funzioni di preposto.\n2. Inserire nel DVR le procedure operative codificate di segnalazione e interruzione dei lavori.\n3. Rilasciare formale lettera di incarico e attestato di nomina a ciascun preposto designato.\n\n## 4. Regime Sanzionatorio\n- **Violazione Art. 18, comma 1, lett. b-bis** (mancata nomina preposto in appalto/subappalto): Arresto da 2 a 4 mesi o ammenda da €1.842,76 a €7.371,04.\n- **Violazione Art. 37, comma 7-ter** (omesso aggiornamento formativo biennale): Arresto da 2 a 4 mesi o ammenda da €1.474,21 a €6.388,23.\n- **Provvedimento di Sospensione dell'Attività Imprenditoriale (Art. 14)**: Adottabile dall'Ispettorato Nazionale del Lavoro (INL) in caso di impiego di lavoratori non regolarmente formati o gravi violazioni prevenzionistiche."
+  },
+  {
+    "doc_id": "gu-2023-dm-antincendio",
+    "source": "GAZZETTA_UFFICIALE",
+    "doc_type": "decree",
+    "official_reference": "D.M. 2 settembre 2021 / D.M. 3 settembre 2021",
+    "title": "Decreto Interministeriale 2 settembre 2021 (GSA) e 3 settembre 2021 (Minispazi): Criteri di gestione della sicurezza antincendio nei luoghi di lavoro e valutazione del rischio di incendio",
+    "publication_date": "2023-10-04",
+    "effective_date": "2023-10-04",
+    "impact_level": "high",
+    "topic_tags": [
+      "fire_safety",
+      "emergency_plans",
+      "high_risk_plants",
+      "risk_assessment",
+      "gsa",
+      "first_aid"
+    ],
+    "summary": "I decreti ministeriali del 1, 2 e 3 settembre 2021 hanno superato integralmente lo storico D.M. 10 marzo 1998, definendo la nuova architettura normativa per la sicurezza antincendio nei luoghi di lavoro. Il Decreto GSA (02/09/2021) e il Decreto Minispazi (03/09/2021) disciplinano i nuovi criteri di valutazione del rischio incendio, l'obbligo di redazione del Piano di Emergenza ed Evacuazione (PEE), la tenuta del registro dei controlli antincendio e la formazione quinquennale con idoneità tecnica per gli addetti alle emergenze in attività di livello 3 (alto rischio).",
+    "canonical_url": "https://www.gazzettaufficiale.it/eli/id/2021/10/04/21A05747/sg",
+    "status": "in_force",
+    "target_sectors": [
+      "manufacturing",
+      "chemical_plants",
+      "warehousing_and_logistics",
+      "healthcare",
+      "hospitality",
+      "public_entertainment",
+      "high_risk_establishments"
+    ],
+    "key_obligations": [
+      "Revisione e aggiornamento della Valutazione del Rischio Incendio secondo i criteri dei Decreti 2 e 3 Settembre 2021 con classificazione dell'attività in Livello 1 (basso rischio), Livello 2 (medio rischio) o Livello 3 (alto rischio).",
+      "Obbligo di redazione del Piano di Emergenza ed Evacuazione (PEE) per tutti i luoghi di lavoro con almeno 10 lavoratori o soggetti a controllo di prevenzione incendi dei Vigili del Fuoco (D.P.R. 151/2011).",
+      "Formazione obbligatoria per gli addetti al servizio antincendio con programmi dedicati da 4 a 16 ore, aggiornamento quinquennale (ogni 5 anni) e superamento dell'esame di idoneità tecnica presso il Comando VVF per le attività di Livello 3.",
+      "Istituzione e compilazione costante del Registro dei Controlli Antincendio per la tracciabilità delle manutenzioni periodiche su estintori, idranti, porte tagliafuoco e impianti sprinkler."
+    ],
+    "penalties_summary": "D.Lgs. 81/2008 Art. 68: arresto da 2 a 4 mesi o ammenda da €1.474,21 a €6.388,23 per il datore di lavoro in caso di omessa o incompleta valutazione del rischio incendio, mancata redazione del piano di emergenza o omessa formazione degli addetti antincendio.",
+    "related_citations": [
+      "D.Lgs. 81/2008 Art. 46",
+      "D.P.R. 151/2011",
+      "D.M. 10 marzo 1998 (abrogato)",
+      "D.M. 1 settembre 2021",
+      "D.M. 2 settembre 2021",
+      "D.M. 3 settembre 2021"
+    ],
+    "content_markdown": "# Nuovo Quadro Normativo di Sicurezza Antincendio nei Luoghi di Lavoro\n\n## 1. La Triade dei Decreti Ministeriali Antincendio\nIl superamento del D.M. 10 marzo 1998 si è concretizzato attraverso tre decreti interministeriali emanati in attuazione dell'**Art. 46 del D.Lgs. 81/2008**:\n1. **D.M. 1 settembre 2021 (Decreto Controlli)**: Criteri per il controllo e la manutenzione degli impianti, delle attrezzature e degli altri sistemi di sicurezza antincendio.\n2. **D.M. 2 settembre 2021 (Decreto GSA - Gestione Sicurezza Antincendio)**: Criteri per la gestione dei luoghi di lavoro in esercizio e in emergenza e caratteristiche dei corsi di formazione antincendio.\n3. **D.M. 3 settembre 2021 (Decreto Minispazi)**: Criteri generali di progettazione, realizzazione ed esercizio della sicurezza antincendio per luoghi di lavoro a basso rischio (fino a 100 occupanti, superficie fino a 4000 mq, senza specifiche sostanze infiammabili).\n\n## 2. Nuova Classificazione dei Livelli di Rischio e Formazione Addetti\nLa precedente suddivisione in rischio basso, medio ed elevato è sostituita da tre livelli di attività:\n\n| Livello di Attività | Rischio Incendio Corrispondente | Corso Iniziale Addetti | Aggiornamento Quinquennale | Esame Idoneità VVF |\n| :--- | :--- | :--- | :--- | :--- |\n| **Livello 1** | Luoghi a basso rischio (Minispazi) | 4 ore (corso 1-FOR) | 2 ore (1-AGG) | Non richiesto |\n| **Livello 2** | Luoghi non assimilabili a 1 e 3 | 8 ore (corso 2-FOR) | 5 ore (2-AGG) | Richiesto per specifiche attività Allegato IV |\n| **Livello 3** | Attività ad alto rischio / Allegato III | 16 ore (corso 3-FOR) | 8 ore (3-AGG) | **Obbligatorio presso Comando VVF** |\n\n## 3. Piano di Emergenza ed Evacuazione (PEE) e Prove di Esodo\n- **Ambito di obbligatorietà (Art. 2 D.M. 02/09/2021)**:\n  - Luoghi di lavoro ove sono occupati almeno 10 lavoratori.\n  - Luoghi di lavoro aperti al pubblico con presenza contemporanea di più di 50 persone.\n  - Luoghi di lavoro che rientrano nelle attività soggette ai controlli di prevenzione incendi di cui all'Allegato I del **D.P.R. 1 agosto 2011, n. 151**.\n- **Esercitazioni e Prove di Evacuazione**: Obbligo di effettuare almeno una prova di evacuazione all'anno con annotazione sul registro antincendio.\n\n## 4. Registro dei Controlli e Qualificazione Manutentori\n- Il datore di lavoro deve predisporre e tenere aggiornato il **Registro dei Controlli Antincendio** (cartaceo o digitale), dove annotare tutti gli interventi di manutenzione periodica semestrale e le verifiche di sorveglianza ordinaria su estintori, naspi, idranti, porte tagliafuoco, evacuatori di fumo e calore (EFC) e sistemi di rilevazione automatica fumi.\n- Gli interventi di manutenzione devono essere eseguiti da **Tecnici Manutentori Qualificati** ai sensi dell'Allegato II del D.M. 01/09/2021.\n\n## 5. Sanzioni e Regime Repressivo\nAi sensi dell'**Art. 68 D.Lgs. 81/2008**, l'omessa valutazione del rischio incendio, la mancata adozione del Piano di Emergenza o l'omessa formazione degli addetti antincendio è punita con l'arresto da 2 a 4 mesi o con l'ammenda da €1.474,21 a €6.388,23."
+  },
+  {
+    "doc_id": "inail-2024-circ-calore",
+    "source": "INAIL",
+    "doc_type": "circular",
+    "official_reference": "Circolare INAIL n. 28/2024",
+    "title": "Circolare INAIL n. 28 del 24 luglio 2024: Indicazioni operative e linee guida per la prevenzione delle patologie da calore nei luoghi di lavoro all'aperto, nell'edilizia e in agricoltura (Progetto Worklimate)",
+    "publication_date": "2024-07-24",
+    "effective_date": "2024-07-24",
+    "impact_level": "high",
+    "topic_tags": [
+      "heat_stress",
+      "microclimate",
+      "construction_safety",
+      "workplace_health",
+      "worklimate",
+      "agriculture"
+    ],
+    "summary": "La Circolare INAIL n. 28/2024 fornisce indicazioni operative dettagliate per la prevenzione dello stress termico e del colpo di calore per i lavoratori impiegati all'aperto, in particolare nei cantieri edili, stradali e nelle aziende agricole. Basata sui modelli previsionali bioclimatici del Progetto Worklimate (CNR-INAIL), stabilisce misure organizzative cogenti, riprogrammazione dei turni, dotazioni idriche e di aree ombreggiate, e le condizioni per l'attivazione della Cassa Integrazione Guadagni Ordinaria (CIGO) per temperature superiori a 35°C.",
+    "canonical_url": "https://www.inail.it/cs/internet/atti-e-documenti/circolari-e-linee-guida/circolari/circolare-inail-28-2024.html",
+    "status": "in_force",
+    "target_sectors": [
+      "construction",
+      "agriculture",
+      "road_maintenance",
+      "quarries_and_mining",
+      "outdoor_logistics",
+      "waste_management"
+    ],
+    "key_obligations": [
+      "Integrazione obbligatoria del rischio microclima e stress termico da calore nel Documento di Valutazione dei Rischi (DVR) aziendale (Artt. 28 e 180-181 D.Lgs. 81/2008).",
+      "Riorganizzazione degli orari di lavoro: anticipazione delle lavorazioni ad alto carico metabolico nelle prime ore del mattino e sospensione delle attività esterne nelle ore di massimo irraggiamento solare (14:00 - 17:00) quando l'indice di calore o la temperatura supera i 35°C.",
+      "Allestimento di aree di riposo ombreggiate, ventilate o climatizzate in cantiere/campo e garanzia di fornitura continua di acqua potabile fresca (10-15°C) e integratori idrosalini.",
+      "Attivazione tempestiva della Cassa Integrazione Guadagni Ordinaria (CIGO INPS) con causale 'eventi meteo - temperature elevate' per giornate con temperature reali o percepite superiori a 35°C."
+    ],
+    "penalties_summary": "Violazione degli obblighi di valutazione dei rischi e adozione delle misure preventive da agenti fisici (D.Lgs. 81/2008 Artt. 28, 180, 181, 185): arresto da 3 a 6 mesi o ammenda da €3.071,27 a €7.862,44 per il datore di lavoro e dirigenti.",
+    "related_citations": [
+      "Circolare INAIL 28/2024",
+      "D.Lgs. 81/2008 Art. 28",
+      "D.Lgs. 81/2008 Titolo VIII Capo I",
+      "D.Lgs. 81/2008 Art. 180",
+      "D.Lgs. 81/2008 Art. 181",
+      "D.L. 98/2023",
+      "Messaggio INPS n. 2729/2023"
+    ],
+    "content_markdown": "# Circolare INAIL n. 28 del 24 Luglio 2024: Prevenzione dello Stress Termico e Colpi di Calore\n\n## 1. Quadro Scientifico ed Epidemiologico (Progetto Worklimate)\nLa Circolare INAIL n. 28/2024 recepisce le evidenze scientifiche elaborate nell'ambito del **Progetto Worklimate** (sviluppato da INAIL in collaborazione con CNR-IBE). L'esposizione prolungata a temperature ambientali elevate combinata con irraggiamento solare diretto, elevata umidità relativa e svolgimento di compiti a medio-alto dispendio energetico (metabolismo di lavoro elevato) comporta un grave rischio di disidratazione, crampi da calore, sincope e colpo di calore potenzialmente letale.\n\nI settori maggiormente vulnerabili includono:\n- Cantieri edili e di ingegneria civile (scavi, asfaltature, coperture, ponteggi);\n- Agricoltura, florovivaismo e silvicoltura;\n- Attività di movimentazione merci all'aperto e logistica portuale/intermodale;\n- Cantieri stradali e ferrovie.\n\n## 2. Valutazione del Rischio Microclima nel DVR\nAi sensi degli **Artt. 28, 180 e 181 del D.Lgs. 81/2008** (Titolo VIII, Agenti Fisici), il datore di lavoro ha l'obbligo di valutare il rischio da stress termico ambientale, formalizzandolo all'interno del DVR:\n1. Utilizzo degli indici microclimatici riconosciuti (WBGT - Wet Bulb Globe Temperature ai sensi della norma UNI EN ISO 7243; Heat Index NOAA; PHS - Predicted Heat Strain ISO 7933).\n2. Consultazione quotidiana delle mappe di previsione del rischio caldo del portale nazionale Worklimate.\n\n## 3. Misure di Prevenzione e Protezione Obbligatorie\n\n### 3.1 Misure Organizzative e Riorganizzazione dei Turni\n- Riprogrammazione delle attività più faticose nelle ore più fresche della giornata (dalle ore 06:00 alle 11:00).\n- Divieto o sospensione dei lavori all'aperto nelle ore centrali a rischio estremo (fascia oraria 14:00 - 17:00).\n- Alternanza programmata tra mansioni all'aperto e compiti al chiuso o all'ombra.\n- Adozione del sistema di vigilanza reciproca ('buddy system') per rilevare tempestivamente sintomi di disorientamento, vertigini o sonnolenza.\n\n### 3.2 Misure Tecniche, Idratazione e Aree di Sosta\n- Allestimento in cantiere/campo di aree di riposo ombreggiate (tendostrutture, tettoie con nebulizzatori d'acqua o container climatizzati).\n- Messa a disposizione gratuita di abbondante acqua potabile fresca (temperatura ideale 10-15°C) e reintegrazione con sali minerali (potassio, magnesio, sodio).\n- Invito all'assunzione frazionata di acqua (un bicchiere ogni 15-20 minuti, evitando bevande ghiacciate, alcoliche o energizzanti con caffeina).\n\n### 3.3 Dispositivi di Protezione Individuale (DPI)\n- Fornitura di indumenti da lavoro estivi leggeri, traspiranti e in cotone chiaro a maniche lunghe.\n- Copricapo a tesa larga con paranuca e occhiali di protezione con filtro solare UV.\n- Creme solari ad alta protezione (SPF 50+) per operatori con fototipo chiaro ed esposizione continuativa.\n\n## 4. Ricorso alla Cassa Integrazione Guadagni Ordinaria (CIGO)\nIn accordo con l'INPS (Messaggio n. 2729/2023 e successivi), le aziende edili e agricole possono richiedere la **CIGO con causale 'eventi meteo - temperature elevate'** quando la temperatura rilevata o percepita (tenuto conto del tasso di umidità e dell'irraggiamento su asfalto o coperture) supera i **35°C**, ovvero anche a temperature inferiori in presenza di particolari lavorazioni ad alto rischio.\n\n## 5. Protocollo di Primo Soccorso per Colpo di Calore\nIn caso di operatore con cute calda e secca, febbre (>40°C), confusione mentale, convulsioni o perdita di coscienza:\n1. Allertare immediatamente il Servizio Sanitario di Emergenza (**112**);\n2. Trasportare immediatamente il lavoratore in un luogo ombreggiato e ventilato;\n3. Raffreddare il corpo con panni bagnati d'acqua fresca su testa, collo, ascelle e inguine;\n4. Non somministrare liquidi per via orale se la persona è incosciente o priva di riflesso deglutitorio."
+  }
+]
