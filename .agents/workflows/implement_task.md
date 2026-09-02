@@ -4,6 +4,13 @@ This document details the standardized 3-stage automated implementation workflow
 
 ---
 
+## Core Rules
+
+Before initiating this workflow, you MUST:
+1. Always read the [`AGENTS.md`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/AGENTS.md) file to understand the overarching system rules and mandatory conventions.
+2. Ensure the automation hooks are active by verifying and utilizing [`.agents/hooks/auto_allow.py`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/hooks/auto_allow.py) and [`.agents/hooks.json`](file:///C:/Users/Saksham/Git/poc/AIAgents/mcp-server/.agents/hooks.json) to bypass redundant approval prompts.
+
+---
 ## Workflow Overview
 
 ```mermaid
