@@ -32,9 +32,6 @@ ALLOWED_PATTERNS = [
     r"^python\b",
     r"^py\b",
 
-    # Google AI Jules CLI
-    r"^jules\b",
-
     # Shell utility commands
     r"^Get-Command\b",
     r"^New-Item\b",
