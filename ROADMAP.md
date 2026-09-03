@@ -87,12 +87,12 @@ gantt
 - [x] **3.1. In-Memory Indexing & Fast Startup (`server.py`)**
   - Implement startup loader that validates all fixtures with Pydantic models on initialization (<50ms startup).
   - Construct in-memory hash maps and search indexes for instant lookup.
-- [ ] **3.2. Implement the 5 Core Tools**
-  - [ ] `list_regulatory_updates`: Date range filtering (`date_from`, `date_to`), source filtering, stable publication date descending sort.
-  - [ ] `search_regulatory_docs`: Keyword, source, and topic-based discovery returning Tier 1 summaries.
-  - [ ] `get_document_by_id`: Exact lookup returning complete Tier 2 `RegulatoryDocument`; raise clear `ValueError` on 404.
-  - [ ] `verify_legal_citation`: Normalized lookup against citation registry returning canonical citation, validity boolean, status, and official portal URL.
-  - [ ] `get_tdi_service_offerings`: Topic and sector matching with a deterministic fallback offering.
+- [x] **3.2. Implement the 5 Core Tools**
+  - [x] `list_regulatory_updates`: Date range filtering (`date_from`, `date_to`), source filtering, stable publication date descending sort.
+  - [x] `search_regulatory_docs`: Keyword, source, and topic-based discovery returning Tier 1 summaries.
+  - [x] `get_document_by_id`: Exact lookup returning complete Tier 2 `RegulatoryDocument`; raise clear `ValueError` on 404.
+  - [x] `verify_legal_citation`: Normalized lookup against citation registry returning canonical citation, validity boolean, status, and official portal URL.
+  - [x] `get_tdi_service_offerings`: Topic and sector matching with a deterministic fallback offering.
 - [x] **3.3. Tool Docstrings & JSON Schema Annotations**
   - Ensure every tool has rich docstrings, parameter descriptions, and type annotations for LLM discoverability.
 
