@@ -84,7 +84,7 @@ gantt
 * **Goal**: Implement in-memory indexing, error handling, and the 5 MCP tools in `server.py`.
 
 ### Tasks
-- [ ] **3.1. In-Memory Indexing & Fast Startup (`server.py`)**
+- [x] **3.1. In-Memory Indexing & Fast Startup (`server.py`)**
   - Implement startup loader that validates all fixtures with Pydantic models on initialization (<50ms startup).
   - Construct in-memory hash maps and search indexes for instant lookup.
 - [ ] **3.2. Implement the 5 Core Tools**
@@ -93,7 +93,7 @@ gantt
   - [ ] `get_document_by_id`: Exact lookup returning complete Tier 2 `RegulatoryDocument`; raise clear `ValueError` on 404.
   - [ ] `verify_legal_citation`: Normalized lookup against citation registry returning canonical citation, validity boolean, status, and official portal URL.
   - [ ] `get_tdi_service_offerings`: Topic and sector matching with a deterministic fallback offering.
-- [ ] **3.3. Tool Docstrings & JSON Schema Annotations**
+- [x] **3.3. Tool Docstrings & JSON Schema Annotations**
   - Ensure every tool has rich docstrings, parameter descriptions, and type annotations for LLM discoverability.
 
 ---
