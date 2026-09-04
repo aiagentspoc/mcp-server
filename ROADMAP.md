@@ -104,16 +104,16 @@ gantt
 * **Goal**: Enforce deterministic latency (<15ms), schema correctness, and production-grade code quality.
 
 ### Tasks
-- [ ] **4.1. Automated Test Suite (`tests/test_server.py`)**
+- [x] **4.1. Automated Test Suite (`tests/test_server.py`)**
   - Test date-window filtering and ordering in `list_regulatory_updates`.
   - Test keyword matching and source isolation in `search_regulatory_docs`.
   - Test exact doc retrieval and exception handling in `get_document_by_id`.
   - Test legal validation test cases: `verify_legal_citation("D.Lgs. 81/2008 Art. 37")` $\rightarrow$ `is_valid: true`, `verify_legal_citation("D.Lgs. 626/94 Art. 3")` $\rightarrow$ `is_valid: false` (repealed).
   - Test commercial CTA matching: `get_tdi_service_offerings("chemical_risk")` $\rightarrow$ `tdi-srv-chemical-audit`.
-- [ ] **4.2. MCP Inspector Interactive Validation**
+- [x] **4.2. MCP Inspector Interactive Validation**
   - Test interactive tool invocation via `uv run fastmcp dev server.py`.
   - Verify zero console noise on `stdio` (all logs redirected to `stderr`).
-- [ ] **4.3. Code Quality & Security Audit**
+- [x] **4.3. Code Quality & Security Audit**
   - Run static analysis with `code-reviewer` guidelines (strict typing, input sanitization, error resilience).
 
 ---

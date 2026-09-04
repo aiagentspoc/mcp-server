@@ -143,19 +143,6 @@ def test_regulatory_docs_to_summary_projection():
         assert summary.canonical_url == doc.canonical_url
 
 
-def test_server_indexing_loader_simulation():
-    """Simulate server.py startup loading pattern to ensure zero-friction in-memory indexing."""
-    with open(REGULATORY_DOCS_PATH, "r", encoding="utf-8") as f:
-        raw_data = json.load(f)
-
-    docs = [RegulatoryDocument(**d) for d in raw_data]
-    docs_by_id = {doc.doc_id: doc for doc in docs}
-
-    for expected_id in EXPECTED_DOC_IDS:
-        assert expected_id in docs_by_id
-        retrieved = docs_by_id[expected_id]
-        assert retrieved.doc_id == expected_id
-
 
 # ==========================================
 # Legal Citations Fixture Tests (Task 2.2)
@@ -246,46 +233,22 @@ def test_citations_relational_integrity_with_regulatory_docs():
             )
 
 
-def test_citations_alias_uniqueness_and_normalization_simulation():
-    """Simulate server.py lookup normalization across aliases, ensuring no collisions and 100% resolution."""
+def test_citations_fixture_alias_collision_free():
+    """Verify that across all fixture records, no normalized alias belongs to more than one canonical citation record."""
     with open(CITATIONS_PATH, "r", encoding="utf-8") as f:
         citations = json.load(f)
 
-    alias_map = {}
+    alias_map: dict[str, str] = {}
     for entry in citations:
-        canonical_input = entry["citation_input"]
-        all_keys = [canonical_input] + entry.get("aliases", [])
-        for key in all_keys:
-            normalized_key = key.strip().lower()
-            assert normalized_key not in alias_map or alias_map[normalized_key] == canonical_input, (
-                f"Alias collision detected for '{normalized_key}' between '{alias_map.get(normalized_key)}' and '{canonical_input}'"
-            )
-            alias_map[normalized_key] = canonical_input
-
-    # Test sample noisy queries matching against registry
-    test_queries = [
-        ("  D.LGS. 81/2008 Art. 37  ", "D.Lgs. 81/2008 Art. 37", True, "in_force"),
-        ("dlgs 81/08 art 37", "D.Lgs. 81/2008 Art. 37", True, "in_force"),
-        ("DECRETO LEGISLATIVO 81/08 ART 37", "D.Lgs. 81/2008 Art. 37", True, "in_force"),
-        ("d.lgs. 626/94 art. 3", "D.Lgs. 626/94 Art. 3", False, "repealed"),
-        ("dlgs 626/94 art 3", "D.Lgs. 626/94 Art. 3", False, "repealed"),
-        ("direttiva 98/37/ce", "Direttiva 98/37/CE", False, "repealed"),
-        ("direttiva macchine 98/37", "Direttiva 98/37/CE", False, "repealed"),
-        ("circolare inail 28/2024", "Circolare INAIL 28/2024", True, "in_force"),
-        ("regolamento (ue) 2023/1230 art 10", "Regolamento (UE) 2023/1230 Art. 10", True, "in_force"),
-    ]
-
-    for raw_query, expected_input, expected_valid, expected_status in test_queries:
-        norm = raw_query.strip().lower()
-        assert norm in alias_map, f"Failed to match query '{raw_query}' (normalized: '{norm}') in alias index"
-        matched_input = alias_map[norm]
-        assert matched_input == expected_input
-
-        # Lookup entry
-        entry = next(c for c in citations if c["citation_input"] == matched_input)
-        result = CitationVerificationResult(**entry)
-        assert result.is_valid == expected_valid
-        assert result.status == expected_status
+        canonical = entry["canonical_citation"]
+        all_keys = [entry["citation_input"]] + entry.get("aliases", [])
+        for raw_key in all_keys:
+            norm_key = raw_key.strip().lower()
+            if norm_key in alias_map:
+                assert alias_map[norm_key] == canonical, (
+                    f"Collision in fixtures: key '{norm_key}' maps to both '{alias_map[norm_key]}' and '{canonical}'"
+                )
+            alias_map[norm_key] = canonical
 
 
 # ==========================================
@@ -355,83 +318,4 @@ def test_tdi_services_field_constraints_and_non_empty():
         assert len(srv.cta_headline.strip()) > 20, f"Service {srv.service_id} cta_headline too short"
         assert len(srv.cta_body.strip()) > 50, f"Service {srv.service_id} cta_body too short"
         assert srv.landing_page_url.startswith("https://"), f"Service {srv.service_id} invalid URL {srv.landing_page_url}"
-
-
-def test_tdi_services_topic_and_sector_matching_simulation():
-    """Simulate server.py get_tdi_service_offerings matching logic across topics and sectors."""
-    with open(TDI_SERVICES_PATH, "r", encoding="utf-8") as f:
-        raw_services = json.load(f)
-
-    services = [TDIServiceOffering(**s) for s in raw_services]
-
-    # 1. Match by topic_category: "chemical_risk"
-    chemical_matches = [
-        s for s in services
-        if "chemical_risk" in s.topic_category.lower()
-        or any("chemical_risk" in sec.lower() for sec in s.applicable_sectors)
-    ]
-    assert len(chemical_matches) >= 1
-    assert chemical_matches[0].service_id == "tdi-srv-chemical-audit"
-
-    # 2. Match by topic_category: "machinery"
-    machinery_matches = [
-        s for s in services
-        if "machinery" in s.topic_category.lower()
-        or any("machinery" in sec.lower() for sec in s.applicable_sectors)
-    ]
-    assert len(machinery_matches) >= 1
-    assert machinery_matches[0].service_id == "tdi-srv-machinery-ce"
-
-    # 3. Match by topic_category: "heat_stress"
-    heat_matches = [
-        s for s in services
-        if "heat_stress" in s.topic_category.lower()
-        or any("heat_stress" in sec.lower() for sec in s.applicable_sectors)
-    ]
-    assert len(heat_matches) >= 1
-    assert heat_matches[0].service_id == "tdi-srv-heat-stress"
-
-    # 4. Match by topic_category: "workplace_safety"
-    safety_matches = [
-        s for s in services
-        if "workplace_safety" in s.topic_category.lower()
-        or any("workplace_safety" in sec.lower() for sec in s.applicable_sectors)
-    ]
-    assert len(safety_matches) >= 1
-    assert safety_matches[0].service_id == "tdi-srv-preposti-training"
-
-    # 5. Match by sector: "construction"
-    construction_matches = [
-        s for s in services
-        if "construction" in s.topic_category.lower()
-        or any("construction" in sec.lower() for sec in s.applicable_sectors)
-    ]
-    assert len(construction_matches) >= 2
-    matched_ids = {s.service_id for s in construction_matches}
-    assert "tdi-srv-preposti-training" in matched_ids
-    assert "tdi-srv-heat-stress" in matched_ids
-
-
-def test_tdi_services_fallback_behavior_simulation():
-    """Simulate server.py deterministic fallback behavior when no topic or sector matches."""
-    with open(TDI_SERVICES_PATH, "r", encoding="utf-8") as f:
-        raw_services = json.load(f)
-
-    services = [TDIServiceOffering(**s) for s in raw_services]
-
-    def mock_get_tdi_service_offerings(topic: str, sector: str = None):
-        val = topic.lower()
-        sec = sector.lower() if sector else None
-        matches = [
-            s for s in services
-            if val in s.topic_category.lower()
-            or any(val in item.lower() for item in s.applicable_sectors)
-            or (sec and any(sec in item.lower() for item in s.applicable_sectors))
-        ]
-        return matches or services[:1]
-
-    fallback_result = mock_get_tdi_service_offerings("unknown_arbitrary_topic_999")
-    assert len(fallback_result) == 1
-    assert fallback_result[0].service_id == "tdi-srv-preposti-training"
-    assert fallback_result[0].topic_category == "workplace_safety"
 
